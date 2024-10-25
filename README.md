@@ -18,8 +18,8 @@ This project utilizes a T5 model and OpenAI's GPT models to correct grammar in s
 
 1. Clone the repository:
    ```
-   git clone https://github.com/schandupatla4/NLPProject.git
-   cd NLPProject
+   git clone https://github.com/schandupatla4/Linguify.git
+   cd Linguify
    ```
 2. Installing Dependencies
    ```
