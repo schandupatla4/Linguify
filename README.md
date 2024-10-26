@@ -1,35 +1,68 @@
-# Linguify
-# Linguify: Tailored Grammar Feedback for Non-Native English Writers
 
-This project utilizes a T5 model and OpenAI's GPT models to correct grammar in sentences and provide expert-level feedback. The system uses the JFLEG dataset for evaluation.
+# Linguify
+## Tailored Grammar Feedback for Non-Native English Writers
+
+Linguify leverages a T5 model and OpenAI's GPT models to correct grammar in sentences and provide expert-level feedback. The system uses the JFLEG dataset for evaluation, offering targeted grammar corrections and detailed feedback for non-native English writers.
 
 ## Features
-- Grammar correction using a pre-trained T5 model (`t5-large`).
-- Expert-level grammatical feedback using GPT-4 via the OpenAI API.
-- Dataset handling for the JFLEG dataset through Hugging Face's `datasets` library.
+- **Grammar Correction**: Uses a fine-tuned T5 model (`t5-base` by default) for precise grammar correction.
+- **Expert Feedback**: Generates expert-level grammatical feedback with GPT-4 through the OpenAI API.
+- **Dataset Support**: Efficiently handles the JFLEG dataset for training, validation, and testing through Hugging Face's `datasets` library.
 
 ## Setup and Installation
 
 ### Prerequisites
 - Python 3.8 or higher
-- [OpenAI API Key](https://platform.openai.com/account/api-keys) (required for feedback functionality)
+- [OpenAI API Key](https://platform.openai.com/account/api-keys) (required for feedback generation)
 
 ### Installation
 
-1. Clone the repository:
-   ```
+1. **Clone the Repository**:
+   ```bash
    git clone https://github.com/schandupatla4/Linguify.git
    cd Linguify
    ```
-2. Installing Dependencies
-   ```
+
+2. **Install Dependencies**:
+   ```bash
    pip install -r requirements.txt
    ```
-3.Set your OpenAI API key in src/grammar_correction.py
+
+3. **Configure the OpenAI API Key**:
+   - Create a `.env` file in the project root and add your OpenAI API key:
+     ```plaintext
+     OPENAI_API_KEY=your-api-key
+     ```
+
+4. **Run the Application**:
+   To run the entire pipeline (loading data, training, correcting grammar, evaluating, and providing feedback), use:
+   ```bash
+   python main.py
    ```
-   openai.api_key = 'your-api-key'  # Replace with your actual API key
-   ```
-4.Usage(To Run)
-   ```
-   python src/grammar_correction.py
-   ```
+
+## Project Structure
+
+```
+Linguify/
+├── main.py                   # Main script to run the pipeline
+├── requirements.txt          # List of dependencies
+├── config/
+│   └── config.py             # Configuration file with model settings and API key management
+├── src/
+│   ├── data_loader.py        # Data loading and preprocessing
+│   ├── model.py              # Model training and grammar correction functions
+│   ├── evaluation.py         # Functions to evaluate model performance (GLEU score)
+│   └── feedback.py           # Function for generating feedback with GPT-4
+├── .env                      # Environment variables (store OpenAI API key here)
+├── README.md                 # Project documentation
+└── .gitignore                # Files and directories to ignore in Git
+```
+
+## Usage
+
+1. **Grammar Correction**: Automatically corrects grammar for sentences in the JFLEG dataset using the T5 model.
+2. **GLEU Evaluation**: Computes GLEU score to evaluate correction quality.
+3. **Feedback Generation**: Provides feedback on corrected sentences, limited to a configurable number of samples.
+
+Example usage steps are incorporated into `main.py`, which orchestrates the entire workflow.
+
