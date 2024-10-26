@@ -44,15 +44,8 @@ Linguify leverages a T5 model and OpenAI's GPT models to correct grammar in sent
 
 ```
 Linguify/
-├── main.py                   # Main script to run the pipeline
-├── requirements.txt          # List of dependencies
-├── config/
-│   └── config.py             # Configuration file with model settings and API key management
-├── src/
-│   ├── data_loader.py        # Data loading and preprocessing
-│   ├── model.py              # Model training and grammar correction functions
-│   ├── evaluation.py         # Functions to evaluate model performance (GLEU score)
-│   └── feedback.py           # Function for generating feedback with GPT-4
+├── notebook/
+│   └── Linguify_Project.ipynb             # Configuration file with model settings and API key management
 ├── .env                      # Environment variables (store OpenAI API key here)
 ├── README.md                 # Project documentation
 └── .gitignore                # Files and directories to ignore in Git
