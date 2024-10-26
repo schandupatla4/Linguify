@@ -45,10 +45,12 @@ Linguify leverages a T5 model and OpenAI's GPT models to correct grammar in sent
 ```
 Linguify/
 ├── notebook/
-│   └── Linguify_Project.ipynb             # Configuration file with model settings and API key management
-├── .env                      # Environment variables (store OpenAI API key here)
-├── README.md                 # Project documentation
-└── .gitignore                # Files and directories to ignore in Git
+│   └── Linguify_Project.ipynb   # Configuration file with model settings and API key management
+├── src/
+│   └── linguify_project.py      #python executable file
+├── .env                         # Environment variables (store OpenAI API key here)
+├── README.md                    # Project documentation
+└── .gitignore                   # Files and directories to ignore in Git
 ```
 
 ## Usage
