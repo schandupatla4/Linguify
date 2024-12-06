@@ -37,7 +37,7 @@ Linguify leverages a T5 model and OpenAI's GPT models to correct grammar in sent
 4. **Run the Application**:
    To run the entire pipeline (loading data, training, correcting grammar, evaluating, and providing feedback), use:
    ```bash
-   python src/linguify_project.py
+   python src/linguify.py
    ```
 
 ## Project Structure
